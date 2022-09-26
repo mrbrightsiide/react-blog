@@ -15,4 +15,26 @@ https://react-blog-sia.web.app/
 
 ### 이슈 해결
 - 'PostView' 컴포넌트에서 하드코딩된 created 데이터를 toLocaleDateString() 메소드를 사용하여 Date 객체 형식으로 변환. 포스트 날짜 포맷에 맞추어 변경하였습니다.</br>
+```javascript
+  useEffect(() => {
+    if (data) {
+      const newDate = data.created.replace(/\./g, "-");
+      const options = {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+      };
+      const formatDate = new Date(newDate)
+        .toLocaleDateString("en-US", options)
+        .split(" ");
+      let newToday = [];
+      newToday.push(formatDate[1].slice(0, 3));
+      formatDate[2].length < 2
+        ? newToday.push("0" + formatDate[2])
+        : newToday.push(formatDate[2]);
+      newToday.push(formatDate[0].replace(",", ""));
+      setToday(newToday);
+    }
+  }, [data]);
+  ```
 <img src="https://user-images.githubusercontent.com/90305737/192212914-edadacba-0f0b-4497-9f2e-31040ded4aaf.png" width="400"/></br>
