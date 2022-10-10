@@ -6,7 +6,7 @@ HTML, CSS로 짜여진 블로그 페이지를 리액트로 컴포넌트화 하�
 https://react-blog-sia.web.app/
 </br></br>
 ## 기능 구현
-1. axios를 사용하여 로컬 json파일에서 데이터 fetch 구현
+1. axios로 json파일에서 게시글 데이터를 받아와 출력
 2. isLoggedIn 상태에 따른 로그인/로그아웃 토글버튼 구현</br>
 ![녹화_2022_09_26_15_55_35_261](https://user-images.githubusercontent.com/90305737/192212277-fa281e7c-af6c-416f-8138-6a32a546376b.gif)
 3. react-router-dom을 사용하여 라우터 구현
